@@ -39,6 +39,7 @@ A machine learning web application that predicts Fire Weather Index (FWI) for Al
 ## Deployment
 
 This application is configured for deployment on Vercel with the following files:
+
 - `vercel.json`: Vercel configuration
 - `index.py`: Entry point for Vercel
 - `runtime.txt`: Python version specification
