@@ -54,6 +54,10 @@ def predict_datapoint():
     else:
         return render_template('home.html')
 
-# Vercel handler
-def handler(environ, start_response):
-    return app(environ, start_response)
+# Export the app for Vercel
+def handler(request, response):
+    return app(request, response)
+
+# This is the main entry point for Vercel
+if __name__ == "__main__":
+    app.run(debug=True)
