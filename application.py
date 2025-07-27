@@ -4,14 +4,18 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import os
 
 
 application = Flask(__name__)
 app = application
 
+# Get the directory of the current file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 ## import ridge regressor and standard scaler pickle
-ridge_model = pickle.load(open('Models/ridge.pkl', 'rb'))
-standard_scaler = pickle.load(open('Models/scaler.pkl', 'rb'))
+ridge_model = pickle.load(open(os.path.join(BASE_DIR, 'Models/ridge.pkl'), 'rb'))
+standard_scaler = pickle.load(open(os.path.join(BASE_DIR, 'Models/scaler.pkl'), 'rb'))
 
 
 @app.route('/')
